@@ -3,7 +3,7 @@
 //该类用来解决进出栈的问题
 
 //栈式队列
-class Queue
+class StackQueue
 {
     private $start=1;
     private $end=0;
@@ -51,7 +51,7 @@ class Queue
         return $this->data_list;
     }
 }
-$queue=new Queue();
+$queue=new StackQueue();
 $queue->in("1");
 $queue->in("2");
 $queue->in("3");
