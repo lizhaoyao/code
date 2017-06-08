@@ -1,20 +1,21 @@
 <?php
-
-
 //二维数组排序
-
-
-
+/**
+ * @param array $array       [要参与排序的数组]
+ * @param string $field      [排序字段]
+ * @param string $sort_rule  [排序规则 升序|降序|自然序]
+ * @return array|bool        [返回排序好的数组]
+ */
 function TwoDimensionalArraySort($array=array(),$field="id",$sort_rule="asc")
 {
 	if(!is_array($array))
 	{
-		return false;
+		return false;//如果不是数组 立即返回false
 	}
-	$key_list_rule=$result=array();
+	$key_list_rule=$result=array();//初始化返回结果和排序键存储的数组
 	foreach($array as $key=>$v)
 	{
-		$key_list_rule[$key]=$v[$field];
+		$key_list_rule[$key]=$v[$field];//遍历数组 把二维数组的key存储下来对应我们要排序的那个字段形成排序规则
 	}
 	switch($sort_rule)
 	{
@@ -36,12 +37,10 @@ function TwoDimensionalArraySort($array=array(),$field="id",$sort_rule="asc")
 	}
 	foreach($key_list_rule as $k=>$v)
 	{
-		$result[$k]=$array[$k];
+		$result[$k]=$array[$k];//按照那个字段排序后的数组进行遍历 将原来而数组的元素逐个添加到排序结果中
 	}
-	return $result;
+	return $result;//返回结果
 }
-
-
 
 $array=array(
     1=>array("id"=>1,"name"=>"元素1","sort_num"=>5),
@@ -53,23 +52,7 @@ $array=array(
     7=>array("id"=>7,"name"=>"元素7","sort_num"=>6),
 );
 
-$sort_result=TwoDimensionalArraySort($array,"sort_num","asc");
-
+$sort_result=TwoDimensionalArraySort($array,"sort_num","asc");//将数组按照 sort_num 字段升序排列
 var_dump($sort_result);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
