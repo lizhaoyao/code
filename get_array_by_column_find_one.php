@@ -1,6 +1,8 @@
 <?php
 
 /**
+ * Add by lizhaoyao
+ * Add at 2018-03-27
  * 从二维数组中根据某个字段查出某一行一维数组
  * @param array $array        [需要查找的数组]
  * @param string $column      [根据字段查找]
