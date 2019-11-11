@@ -2,7 +2,7 @@
 $result = str_count_result("22222222", "22");
 var_dump($result);//输出4
 
-function str_count_result($total_string = '',$sub_string = '')
+function str_count_result($total_string = '', $sub_string = '')
 {
     $result = 0;
     $total_length = strlen($total_string);
